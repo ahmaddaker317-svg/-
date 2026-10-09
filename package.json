@@ -1,0 +1,10 @@
+{
+  "name":"adt-stock-desktop",
+  "version":"52.0.0",
+  "description":"ADT Stock Windows desktop application",
+  "main":"main.cjs",
+  "private":true,
+  "scripts":{"start":"electron .","dist":"electron-builder --win nsis"},
+  "devDependencies":{"electron":"^35.0.0","electron-builder":"^26.0.12"},
+  "build":{"appId":"com.adtstock.desktop","productName":"ADT Stock","directories":{"output":"dist"},"files":["index.html","main.cjs","preload.cjs","package.json"],"win":{"target":[{"target":"nsis","arch":["x64"]}],"artifactName":"ADT-Stock-Setup-${version}.${ext}"},"nsis":{"oneClick":false,"allowToChangeInstallationDirectory":true,"createDesktopShortcut":true,"createStartMenuShortcut":true}}
+}
